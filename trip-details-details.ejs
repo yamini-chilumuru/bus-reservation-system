@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #555545;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 50%;
+            background-color: #ccccc4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #97704f;
+        }
+
+        h1 {
+            text-align: center;
+            color: #97704f;
+        }
+
+        .details {
+            margin-top: 20px;
+        }
+
+        .details p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Trip Details</h1>
+        <% if (tripDetails) { %>
+            <ul>
+                <% tripDetails.forEach(tripDetails => { %>
+                    <li>
+                        <p>Bus no: <%= tripDetails.busno %></p>
+                        <p>No of seats: <%= tripDetails.noofseats %></p>
+                        <!-- Display other relevant fields -->
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No records found.</p>
+        <% } %>
+</body>
+</html>
